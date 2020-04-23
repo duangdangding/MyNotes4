@@ -1,0 +1,7 @@
+  public FileContentResult ExportToExcel()
+        {
+            byte[] data = Convert.FromBase64String(Request.Form["data"]);
+            string deContent = System.Text.Encoding.UTF8.GetString(data);
+            string fileName = Request.Form["fileName"];
+            return File(Encoding.UTF8.GetBytes(deContent), "application/ms-excel", fileName + DataExportHelper.Suffix() + ".xls");
+        }

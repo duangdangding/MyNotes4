@@ -1,0 +1,9 @@
+
+<script type="text/javascript">
+	function toSubmit(event){
+		event.preventDefault();
+		alert("aadasdasdas");
+	}
+</script>
+
+<a href="www.baidu.com" onclick="toSubmit(event)">Ìá½»ÇëÇó</a>

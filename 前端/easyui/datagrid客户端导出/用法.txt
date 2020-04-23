@@ -1,0 +1,9 @@
+function ExcleImorpt(){
+    var title='导出的Excel';           
+    var rows = $('#list').datagrid('getRows');//rows也可以不要
+    var dataXml = $('#list').datagrid('getExcelXml', { rows: rows, title: title });
+    _downloadByExplorer(vriualRootPath + 'Public/ExportToExcel', Base64.encode(dataXml, true), title);//下载附件
+
+}
+
+

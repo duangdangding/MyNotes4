@@ -1,0 +1,4 @@
+var dateObj = JSON.parse(birthday);
+var date = new Date(dateObj.time);
+var dateStr = date.getFullYear() + '-' + getMonth() + '-' + getDate();
+dateStr就是你想要的东西。需要自己做个转化的。。不知道time是不是一个时间毫秒数，要是不是的，只能从dateObj中做点文章，把dateObj.year+ ‘-’ +  dateObj.month +  ‘-’ + dateObj.date 这种方式拼出来，这个地方year最好是在数据库中就返回1985这样的数据，不要是85.。。。。

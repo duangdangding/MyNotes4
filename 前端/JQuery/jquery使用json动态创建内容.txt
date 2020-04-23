@@ -1,0 +1,26 @@
+ $("#usermsg").click(function(){
+	       $.ajax({
+		       url:"u/findAll",
+		       success:function(data){
+//		           alert(JSON.parse(data));
+			       var trs;
+			       var tbody=$("#result");
+                   $.each(JSON.parse(data),function(i,user){
+					    var date=new Date(user.birthday.time);
+					    var time=date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate();
+//					    alert(date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate());
+//						alert(user.birthday.toString());
+//	                    var tr=$("<tr></tr>");
+//                       $("#toMsg").append(tr);
+					        trs+="<tr><td>"+user.id+"</td>"
+						        +"<td>"+user.username+"</td>"
+						        +"<td>"+time+"</td>"
+						        +"<td>"+user.age+"</td></tr>";
+//					    tr.appendTo($("#toMsg"));
+//	                   alert(trs);
+	                   tbody.html(trs);
+	                   $("#show").attribute("display","block");
+					});
+               }
+	       },"json");
+	   });
